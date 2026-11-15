@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 8% 7%;             /* near-black warm #130e0c */
+    --foreground: 38 18% 90%;           /* warm pearl */
+    --primary: 20 8% 7%;
+    --primary-foreground: 38 18% 90%;
+    --accent: 18 42% 55%;               /* terracotta #c17a54 */
+    --surface: 20 6% 11%;
+    --surface-raised: 20 5% 15%;
+    --muted-foreground: 38 8% 55%;
+    --border: 20 5% 18%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--background));
+  }
+}
+
+/* Custom styling for editorial elements */
+.font-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.label-caps {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(20 8% 7%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(20 5% 22%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(18 42% 55%);
+}
+
+/* Hide horizontal scrollbar when requested */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
